@@ -17,3 +17,4 @@ src/test/tmp/.keep
 *.iml
 node_modules
 npm-debug.log
+/.metadata/

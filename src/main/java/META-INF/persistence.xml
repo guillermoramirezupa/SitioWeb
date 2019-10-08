@@ -21,9 +21,9 @@
 		<!-- The datasource is deployed as WEB-INF/arquillian-ds.xml, you can find
 			it in the source at src/test/resources/arquillian-ds.xml -->
 		<jta-data-source>java:/TestDS</jta-data-source>
-		<class>py.edu.upa.test.entity.Proveedor</class>
-		<class>py.edu.upa.test.entity.Producto</class>
-		<class>py.edu.upa.test.entity.Categoria</class>
+		<class>py.edu.upa.TGrupal.entity.Proveedor</class>
+		<class>py.edu.upa.TGrupal.entity.Producto</class>
+		<class>py.edu.upa.TGrupal.entity.Categoria</class>
 		<properties>
 			<!-- Properties for Hibernate -->
 			<property name="hibernate.hbm2ddl.auto" value="validate" />

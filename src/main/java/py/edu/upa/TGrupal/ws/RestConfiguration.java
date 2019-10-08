@@ -1,4 +1,4 @@
-package py.edu.upa.test.ws;
+package py.edu.upa.TGrupal.ws;
 
 import javax.ws.rs.ApplicationPath;
 import javax.ws.rs.core.Application;

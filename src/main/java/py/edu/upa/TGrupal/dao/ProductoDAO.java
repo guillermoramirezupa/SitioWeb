@@ -10,10 +10,10 @@ import org.hibernate.Criteria;
 import org.hibernate.Session;
 import org.hibernate.criterion.Restrictions;
 
-import py.edu.upa.test.entity.Task;
+import py.edu.upa.TGrupal.entity.Producto;
 
 @Stateless
-public class TaskDAO {
+public class ProductoDAO {
 	@PersistenceContext
 	EntityManager entityManager;
 	
@@ -59,16 +59,14 @@ public class TaskDAO {
 
 	}
 	
-	public void insert(Producto t){
-		entityManager.persist(t);
+	public void insert(Producto p){
+		entityManager.persist(p);
 	}
 	
 	public void update(Integer id, Producto producto){
 		Producto p = findById(id);
-		p.setCreationDate(producto.getCreationDate());
 		p.setDescription(producto.getDescription());
 		p.setDeleted(producto.getDeleted());
-		p.setFile(producto.getFile());
 		p.setLimitDate(producto.getLimitDate());
 		p.setName(producto.getName());
 		p.setUpdateDate(producto.getUpdateDate());
@@ -77,22 +75,22 @@ public class TaskDAO {
 	}
 	
 	public void delete(Integer id){
-		Task t = findById(id);
-		t.setDeleted(true);
-		entityManager.merge(t);
+		Producto p = findById(id);
+		p.setDeleted(true);
+		entityManager.merge(p);
 	}
 	@SuppressWarnings("unchecked")
-	public List<Task> findByType(int id) {
+	public List<Producto> findByType(int id) {
 		Session session = (Session) entityManager.getDelegate();
-		Criteria criteria = session.createCriteria(Task.class);
+		Criteria criteria = session.createCriteria(Producto.class);
 		criteria.add(Restrictions.eq("type.id",id));
-		return(List<Task>) criteria.list();
+		return(List<Producto>) criteria.list();
 	}
 
 	@SuppressWarnings("unchecked")
-	public List<Task> getPaginado(int pageSize, int first) {
+	public List<Producto> getPaginado(int pageSize, int first) {
 		Session session = (Session) entityManager.getDelegate();
-		Criteria criteria = session.createCriteria(Task.class);
+		Criteria criteria = session.createCriteria(Producto.class);
 		criteria.setFirstResult(first);
 		criteria.setMaxResults(pageSize);
 		session.getTransaction().commit();

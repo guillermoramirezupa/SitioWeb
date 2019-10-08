@@ -44,4 +44,11 @@ public class Proveedor implements Serializable {
 		return serialVersionUID;
 	}
 
+	public void setProveedor(Proveedor proveedor) {
+		this.proveedor = proveedor;
+	}
+
+
+	
+
 }
